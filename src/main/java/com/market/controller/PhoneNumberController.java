@@ -26,7 +26,7 @@ public class PhoneNumberController {
     public Object numberIsRepeat(@PathVariable String number){
         Map result = new HashMap();
         result.put("code","1");
-        result.put("msg","您输入的电话号码是:"+number);
+        result.put("msg","正在判断您输入的电话号码:"+number+",是否重复");
         return result;
     }
 
@@ -35,7 +35,25 @@ public class PhoneNumberController {
     public Object numberIsEmpty(@PathVariable String number){
         Map result = new HashMap();
         result.put("code","1");
-        result.put("msg","您输入的电话号码是:"+number);
+        result.put("msg","正在判断您输入的电话号码:"+number+",是否为空");
+        return result;
+    }
+
+    @RequestMapping("/delete/{number}")
+    @ResponseBody
+    public Object delete(@PathVariable String number){
+        Map result = new HashMap();
+        result.put("code","1");
+        result.put("msg","正在删除您输入的电话号码:"+number);
+        return result;
+    }
+
+    @RequestMapping("/remove/{number}")
+    @ResponseBody
+    public Object remove(@PathVariable String number){
+        Map result = new HashMap();
+        result.put("code","1");
+        result.put("msg","正在移除您输入的电话号码:"+number);
         return result;
     }
 }
